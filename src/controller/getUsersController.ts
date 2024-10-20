@@ -6,7 +6,6 @@ export const getUsersController = (
   res: ServerResponse
 ) => {
   const users = getUsersService();
-
   res.statusCode = 200;
   res.setHeader("Content-Type", "application/json");
   res.end(JSON.stringify(users));

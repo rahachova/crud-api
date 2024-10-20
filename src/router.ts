@@ -38,9 +38,11 @@ export const router = (req: IncomingMessage, res: ServerResponse) => {
       case "DELETE":
         deleteUserController(req, res, userId);
         break;
-
       default:
         break;
     }
+  } else {
+    res.statusCode = 404;
+    res.end("Resource not found");
   }
 };
