@@ -1,5 +1,5 @@
 import { IncomingMessage, ServerResponse } from "http";
-import { createUserService } from "../service/createUserService";
+import { createUserService } from "../service";
 
 export const createUserController = (
   req: IncomingMessage,
@@ -17,7 +17,7 @@ export const createUserController = (
       res.setHeader("Content-Type", "application/json");
       res.end(JSON.stringify(newUser));
     } else {
-      res.statusCode = 404;
+      res.statusCode = 400;
       res.end("New user should contain username, age and hobbies");
     }
   });
