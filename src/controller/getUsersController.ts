@@ -7,7 +7,7 @@ export const getUsersController = (
 ) => {
   const users = getUsersService();
 
-  req.statusCode = 200;
+  res.statusCode = 200;
   res.setHeader("Content-Type", "application/json");
   res.end(JSON.stringify(users));
 };

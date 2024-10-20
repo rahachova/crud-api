@@ -15,7 +15,7 @@ export const getUserController = (
 
   const user = getUserService(userId);
   if (user) {
-    req.statusCode = 200;
+    res.statusCode = 200;
     res.setHeader("Content-Type", "application/json");
     res.end(JSON.stringify(user));
   } else {
